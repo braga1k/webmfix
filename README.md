@@ -88,6 +88,34 @@ file chooser rather than a separate toolkit's file dialog.
 
 ## Build and install
 
+### Download a release
+
+Download the files from the [latest release](https://github.com/braga1k/webmfix/releases/latest).
+The prebuilt downloads target **Arch Linux / Omarchy, x86_64**, with the Qt 6.12
+runtime. They are dynamically linked and are not a self-contained AppImage
+or a universal Linux build. Python, FFmpeg and the runtime dependencies above
+are still required.
+
+For the Arch package:
+
+```sh
+sudo pacman -U webmfix-1.1.0-1-x86_64.pkg.tar.zst
+```
+
+For installation in your account without administrator privileges:
+
+```sh
+tar -xzf webmfix-1.1.0-linux-x86_64.tar.gz
+cd webmfix-1.1.0-linux-x86_64
+bin/install-user
+```
+
+The release includes `SHA256SUMS`. To verify both downloaded assets, place
+them alongside that file and run `sha256sum -c SHA256SUMS`. If you downloaded
+only one asset, verify its individual entry from the checksum file.
+
+### Build from source
+
 ```sh
 git clone https://github.com/braga1k/webmfix.git
 cd webmfix

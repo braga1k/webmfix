@@ -2,6 +2,7 @@ pkgname=webmfix
 pkgver=1.1.0
 pkgrel=1
 pkgdesc='Repair missing audio headers in WebM videos with a small Qt interface'
+url='https://github.com/braga1k/webmfix'
 arch=('x86_64' 'aarch64')
 license=('MIT')
 options=('!debug')
