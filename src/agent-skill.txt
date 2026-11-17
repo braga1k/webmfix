@@ -1,0 +1,12 @@
+---
+name: webmfix
+description: Verificar ou reparar WebM com OpusHead ausente usando a aplicação local webmfix.
+---
+
+Usar `webmfix check /caminho/video.webm --json` para diagnosticar sem escrita.
+Usar `webmfix repair /caminho/video.webm --output /destino --json` quando a
+reparação estiver autorizada. Os comandos não precisam de display e devolvem
+JSON, exit0 sucesso/exit1 erro. Sem --output, cria WebM corrigidos junto à origem.
+Não sobrescreve originais/destinos. Só repara cabeçalho Opus ausente/vazio em
+mono/estéreo com metadados suficientes. Compara pacotes, tempos e PCM16.
+Não interpretar um ficheiro sem este problema como prova de áudio audível.

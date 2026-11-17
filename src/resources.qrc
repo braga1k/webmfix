@@ -1,0 +1,6 @@
+<RCC><qresource prefix="/">
+<file>Main.qml</file><file>ActionButton.qml</file>
+<file>repair.py</file><file>worker.py</file><file>agent-skill.txt</file>
+<file>i18n/en.json</file><file>i18n/pt.json</file>
+<file alias="webmfix.svg">../pkgbuild/webmfix.svg</file>
+</qresource></RCC>

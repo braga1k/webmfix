@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=WebM Audio Fix
+Name[pt]=Reparar áudio WebM
+Comment=Repair missing audio headers in WebM videos
+Comment[pt]=Corrigir o áudio de vídeos WebM sem alterar os originais
+Exec=webmfix open %F
+Icon=webmfix
+Terminal=false
+Categories=AudioVideo;Video;
+MimeType=video/webm;audio/webm;
+StartupWMClass=webmfix

@@ -1,0 +1,10 @@
+{
+  "%n video(s)": {
+    "one": "%n video",
+    "other": "%n videos"
+  },
+  "Repair %n video(s)": {
+    "one": "Repair %n video",
+    "other": "Repair %n videos"
+  }
+}

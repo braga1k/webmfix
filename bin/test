@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+mkdir -p "$ROOT/build/tests"
+cd "$ROOT/build/tests"
+qmake6 "$ROOT/tests/webmfix_tests.pro"
+make -j4
+python3 "$ROOT/tests/make_fixture.py" "$ROOT/build/tests/fixtures"
+QT_QPA_PLATFORM=offscreen QT_QPA_PLATFORMTHEME=generic QT_QUICK_BACKEND=software QT_FORCE_STDERR_LOGGING=1 ./webmfix_tests

@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+install -Dm755 "$ROOT/build/webmfix" "$HOME/.local/bin/webmfix"
+install -Dm644 "$ROOT/pkgbuild/webmfix.svg" "$HOME/.local/share/icons/hicolor/scalable/apps/webmfix.svg"
+python3 - "$ROOT" <<'PY'
+from pathlib import Path
+import sys
+root = Path(sys.argv[1])
+home = Path.home()
+desktop = (root / 'pkgbuild/webmfix.desktop').read_text()
+desktop = desktop.replace('Exec=webmfix open %F', 'Exec="' + str(home / '.local/bin/webmfix') + '" open %F')
+target = home / '.local/share/applications/webmfix.desktop'
+target.parent.mkdir(parents=True, exist_ok=True)
+target.write_text(desktop)
+PY
+if command -v update-desktop-database >/dev/null; then update-desktop-database "$HOME/.local/share/applications"; fi
